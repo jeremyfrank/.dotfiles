@@ -1,0 +1,11 @@
+[user]
+	name = <%= print( "Name: " ); STDOUT.flush; STDIN.gets.chomp %>
+	email = <%= print( "Email: " ); STDOUT.flush; STDIN.gets.chomp %>
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+[branch]
+	autosetuprebase = always
+[core]
+	editor = "subl -w"
+	excludesfile = "~/.gitignore"

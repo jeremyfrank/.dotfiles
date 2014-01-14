@@ -5,14 +5,7 @@ dotfiles = Dir.glob('*/**{.symlink}')
 
 desc 'Bootstrap a new Mac with dotfiles'
 task :install do
-  Rake::Task['ohmyzsh'].invoke
   Rake::Task['dotfiles'].invoke
-end
-
-desc 'Installs oh-my-zsh'
-task :ohmyzsh do
-  puts 'Installling oh-my-zsh...'
-  system 'curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh'
 end
 
 desc 'Creates symlinks in ~'

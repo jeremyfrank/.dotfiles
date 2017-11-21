@@ -42,7 +42,7 @@ need_push () {
   then
     echo " "
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%}"
   fi
 }
 
@@ -56,7 +56,7 @@ node_version() {
 node_prompt() {
   if ! [[ -z "$(node_version)" ]]
   then
-    echo "%{$fg_bold[yellow]%}node-$(node_version)%{$reset_color%} "
+    echo "%{$fg_bold[green]%}⬢ $(node_version)%{$reset_color%}"
   else
     echo ""
   fi
@@ -70,24 +70,24 @@ ruby_version() {
 
   if (( $+commands[rvm-prompt] ))
   then
-    echo "$(rvm-prompt | awk '{print $1}')"
+    echo "$(rvm-prompt v | awk '{print $1}')"
   fi
 }
 
 ruby_prompt() {
   if ! [[ -z "$(ruby_version)" ]]
   then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
+    echo "%{$fg_bold[red]%}◆ v$(ruby_version)%{$reset_color%}"
   else
     echo ""
   fi
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/ %{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(ruby_prompt)$(node_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(ruby_prompt) $(node_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
 
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"

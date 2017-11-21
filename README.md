@@ -6,12 +6,12 @@ My dotfiles. Borrow as you see fit.
 
 `rake install`
 
-This will setup the following:
+This will set up the following:
 
 * oh-my-zsh
 * dotfiles
 
-This auto installs oh-my-zsh, set the shell to use zsh, and creates symlinks in `~/` that point to the appropriate files in `~/.dotfiles`, where everything is configured and tweaked.
+This sets up oh-my-zsh, set the shell to use zsh, and creates symlinks in `~/` that point to the appropriate files in `~/.dotfiles`, where everything is configured and tweaked.
 
 ## Credits
 

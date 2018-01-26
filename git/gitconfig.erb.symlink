@@ -7,5 +7,7 @@
 [branch]
 	autosetuprebase = always
 [core]
-	editor = "subl -w"
+	editor = "subl -n -w"
 	excludesfile = "~/.gitignore"
+[push]
+  default = current

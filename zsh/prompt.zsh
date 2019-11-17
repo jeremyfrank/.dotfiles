@@ -50,9 +50,9 @@ need_push () {
 }
 
 node_version() {
-  if (( $+commands[node] ))
+  if (( $+commands[asdf] ))
   then
-    echo "$(node --version | awk '{print $1}')"
+    echo "$(asdf current nodejs | awk -F' ' '{print $1}')"
   fi
 }
 
@@ -68,12 +68,7 @@ node_prompt() {
 ruby_version() {
   if (( $+commands[rbenv] ))
   then
-    echo "$(rbenv version | awk '{print $1}')"
-  fi
-
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt v | awk '{print $1}')"
+    echo "$(asdf current ruby | awk -F' ' '{print $1}')"
   fi
 }
 

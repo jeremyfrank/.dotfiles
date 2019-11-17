@@ -1,8 +1,9 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
@@ -35,24 +36,3 @@ do
 done
 
 unset config_files
-
-# Unalias gm (git merge) for GraphicsMagick
-unalias gm
-
-# Load NVM and activate bash completion
-export NVM_DIR="/Users/jfrank/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-
-# Calling nvm use automatically in a directory with a .nvmrc file
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc

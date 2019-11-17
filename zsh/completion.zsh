@@ -3,8 +3,3 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
-
-# grunt completion
-zstyle ':completion:*' use-cache yes
-zstyle ':completion::complete:grunt::options:' show_grunt_path yes
-zstyle ':completion::complete:grunt::options:' expire 1

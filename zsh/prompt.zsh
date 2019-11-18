@@ -66,7 +66,7 @@ node_prompt() {
 }
 
 ruby_version() {
-  if (( $+commands[rbenv] ))
+  if (( $+commands[asdf] ))
   then
     echo "$(asdf current ruby | awk -F' ' '{print $1}')"
   fi

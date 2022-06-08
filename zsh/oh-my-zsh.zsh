@@ -14,7 +14,7 @@ plugins=(
   brew
   composer
   git
-  osx
+  macos
   z
 )
 

@@ -20,6 +20,7 @@ plugins=(
   osx
   postgres
   ruby
+  z
 )
 
 source $ZSH/oh-my-zsh.sh

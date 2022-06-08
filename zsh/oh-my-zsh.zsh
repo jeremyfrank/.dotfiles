@@ -12,13 +12,9 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   brew
-  bundler
   composer
-  gem
   git
   osx
-  postgres
-  ruby
   z
 )
 

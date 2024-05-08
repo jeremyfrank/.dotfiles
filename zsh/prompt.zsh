@@ -65,22 +65,6 @@ node_prompt() {
   fi
 }
 
-ruby_version() {
-  if (( $+commands[asdf] ))
-  then
-    echo "$(asdf current ruby | awk -F' ' '{print $1}')"
-  fi
-}
-
-ruby_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg_bold[red]%}◆ $(ruby_version)%{$reset_color%}"
-  else
-    echo ""
-  fi
-}
-
 directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%{$reset_color%}"
 }

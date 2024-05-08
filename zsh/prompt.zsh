@@ -52,7 +52,7 @@ need_push () {
 node_version() {
   if (( $+commands[asdf] ))
   then
-    echo "$(asdf current nodejs | awk -F' ' '{print $1}')"
+    echo "$(asdf current nodejs | awk -F' ' '{print $2}')"
   fi
 }
 
@@ -69,10 +69,7 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%{$reset_color%}"
 }
 
-# export PROMPT=$'\n› $(ruby_prompt) $(node_prompt) in $(directory_name) $(git_dirty)$(need_push) '
-
-export PROMPT='%(?:%{$fg_bold[green]%}› :%{$fg_bold[red]%}› )'
-PROMPT+=$'$(directory_name) $(git_dirty)$(need_push) '
+export PROMPT=$'\n› $(node_prompt) in $(directory_name) $(git_dirty)$(need_push) '
 
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"

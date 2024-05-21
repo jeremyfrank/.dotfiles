@@ -20,16 +20,16 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
 
 git_prompt_info () {
  ref=$($git symbolic-ref HEAD 2>/dev/null) || return
- echo "${ref#refs/heads/}"
+ echo "⎇  ${ref#refs/heads/}"
 }
 
 # This assumes that you always have an origin named `origin`, and that you only
@@ -59,7 +59,7 @@ node_version() {
 node_prompt() {
   if ! [[ -z "$(node_version)" ]]
   then
-    echo "%{$fg_bold[green]%}⬢ $(node_version)%{$reset_color%}"
+    echo "%{$fg_bold[green]%}⬢ $(node_version)%{$reset_color%} in"
   else
     echo ""
   fi

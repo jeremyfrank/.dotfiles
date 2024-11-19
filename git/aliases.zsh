@@ -1,7 +1,3 @@
-# https://github.com/scottgonzalez/pretty-diff
-alias pd="pretty-diff"
-alias gd="gist-diff" # optional --public
-
 # open pull request from the command line
 pr () {
   local repo=`git remote -v | grep -m 1 "(push)" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"`

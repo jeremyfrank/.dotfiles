@@ -14,6 +14,7 @@ plugins=(
   brew
   git
   macos
+  mise
   z
 )
 

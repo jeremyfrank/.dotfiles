@@ -2,8 +2,6 @@
 
 My dotfiles. Borrow as you see fit.
 
-![Prompt](extras/prompt.png)
-
 ## Setup
 
 `rake install`
